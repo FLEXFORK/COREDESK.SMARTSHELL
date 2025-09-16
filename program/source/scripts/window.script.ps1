@@ -1,5 +1,3 @@
-# ------------------------------------------------
-# DOCUMENT HEADER ---------- NOTES AND INFORMATION
 
 
 <#
@@ -12,7 +10,15 @@
 
 
 # ---------------  CURRENT FILE  --------------- #
-# /ROOTDIR//PROGRAM/SOURCE/VIEWS/WINDOW.SCRIPT.PS1
+# /ROOTDIR//PROGRAM/SOURCE/SCRIPTS/WINDOW.SCRIPT.PS1
 # ----------------  POWERSHELL  ---------------- #
+
+function Get-WindowLogic {
+    return @{
+        Version = "1.0.0"
+        Author = "SmartShell Team"
+        LastUpdate = (Get-Date)
+    }
+}
 
 
