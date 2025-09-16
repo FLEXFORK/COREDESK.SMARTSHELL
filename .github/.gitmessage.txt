@@ -1,0 +1,4 @@
+# Write one or more bullets like:
+# - Add <thing>
+# - Fix <issue> (refs #123)
+# Lines starting with # are ignored.

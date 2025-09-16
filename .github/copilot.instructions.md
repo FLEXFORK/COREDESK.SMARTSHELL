@@ -1,5 +1,6 @@
 ## COMMIT MESSAGE GUIDELINES
-Aim: All AI or manually written commit messages MUST use a concise bullet list format.
+
+All AI or manually written commit messages MUST use a concise bullet list format.
 
 Format rules:
 - First line begins with a capital letter bullet line (no conventional commit prefix required unless explicitly added by maintainer).
@@ -53,6 +54,7 @@ These guidelines help AI learn and produce consistent messages. Keep this sectio
 
 
 ## CODE QUALITY GUIDELINES
+
 Aim: Generate production-grade, secure, maintainable code. Keep answers concise and cite official APIs (no invented methods).
 
 Core principles:

@@ -1,0 +1,18 @@
+# ------------------------------------------------
+# DOCUMENT HEADER ---------- NOTES AND INFORMATION
+
+
+<#
+
+- SMARTSHELL.PS1 IS THE MAIN PROGRAM ENTRYPOINT
+- WINDOW.VIEW.PS1 IS THE MAIN PROGRAM GUI
+- WINDOW.SCRIPT.PS1 IS THE MAIN PROGRAM LOGIC
+
+#>
+
+
+# ---------------  CURRENT FILE  --------------- #
+# /ROOTDIR//PROGRAM/SOURCE/VIEWS/WINDOW.SCRIPT.PS1
+# ----------------  POWERSHELL  ---------------- #
+
+
