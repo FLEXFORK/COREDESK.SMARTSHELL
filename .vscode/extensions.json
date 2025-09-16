@@ -1,0 +1,9 @@
+{
+  // Recommended extensions for SmartShell workspace
+  "recommendations": [
+    "ms-vscode.powershell", // PowerShell language support & debugger
+    "github.copilot", // GitHub Copilot AI pair programmer
+    "mechatroner.rainbow-csv" // Rainbow CSV highlight & tools
+  ],
+  "unwantedRecommendations": []
+}

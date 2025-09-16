@@ -1,0 +1,13 @@
+{
+  // Minimal VS Code debug configuration for SmartShell
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run SmartShell",
+      "type": "PowerShell",
+      "request": "launch",
+      "script": "${workspaceFolder}/program/smartshell.ps1",
+      "cwd": "${workspaceFolder}"
+    }
+  ]
+}
