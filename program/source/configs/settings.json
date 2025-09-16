@@ -3,7 +3,9 @@
     "width": 800,
     "height": 600,
     "startPosition": "CenterScreen",
-    "resizable": false
+    "resizable": false,
+    "frameless": true,
+    "customTitlebar": true
   },
   "application": {
     "version": "1.0.1",
