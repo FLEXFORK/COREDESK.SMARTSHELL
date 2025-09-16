@@ -58,8 +58,8 @@ function Set-AppSettings {
 function Get-DefaultSettings {
   return @{
     window      = @{
-      width          = 1000
-      height         = 800
+      width          = 800
+      height         = 600
       startPosition  = "CenterScreen"
       resizable      = $false
       frameless      = $true

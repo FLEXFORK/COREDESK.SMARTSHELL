@@ -1,122 +1,122 @@
-﻿[
-    {
-        "Name":  "Complete application startup sequence",
-        "Timestamp":  {
-                          "value":  "\/Date(1758033289278)\/",
-                          "DisplayHint":  2,
-                          "DateTime":  "Tuesday, September 16, 2025 8:34:49 AM"
-                      },
-        "Duration":  {
-                         "Ticks":  1374479,
-                         "Days":  0,
-                         "Hours":  0,
-                         "Milliseconds":  137,
-                         "Minutes":  0,
-                         "Seconds":  0,
-                         "TotalDays":  1.5908321759259258E-06,
-                         "TotalHours":  3.8179972222222218E-05,
-                         "TotalMilliseconds":  137.4479,
-                         "TotalMinutes":  0.0022907983333333333,
-                         "TotalSeconds":  0.13744789999999998
-                     },
-        "Message":  "",
-        "Category":  "Functional",
-        "Status":  "PASS"
+[
+  {
+    "Timestamp": "2025-09-16T18:08:56.6904066+00:00",
+    "Message": "Expected 'new-theme', got 'catppuccin-frappe'. Theme should be updated in settings",
+    "Category": "Theme Integration",
+    "Status": "ERROR",
+    "Duration": {
+      "Ticks": 114469,
+      "Days": 0,
+      "Hours": 0,
+      "Milliseconds": 11,
+      "Microseconds": 446,
+      "Nanoseconds": 900,
+      "Minutes": 0,
+      "Seconds": 0,
+      "TotalDays": 1.3248726851851853E-07,
+      "TotalHours": 3.1796944444444445E-06,
+      "TotalMilliseconds": 11.4469,
+      "TotalMicroseconds": 11446.9,
+      "TotalNanoseconds": 11446900.0,
+      "TotalMinutes": 0.00019078166666666667,
+      "TotalSeconds": 0.0114469
     },
-    {
-        "Name":  "Settings version compatibility check",
-        "Timestamp":  {
-                          "value":  "\/Date(1758033289306)\/",
-                          "DisplayHint":  2,
-                          "DateTime":  "Tuesday, September 16, 2025 8:34:49 AM"
-                      },
-        "Duration":  {
-                         "Ticks":  197605,
-                         "Days":  0,
-                         "Hours":  0,
-                         "Milliseconds":  19,
-                         "Minutes":  0,
-                         "Seconds":  0,
-                         "TotalDays":  2.2870949074074073E-07,
-                         "TotalHours":  5.4890277777777776E-06,
-                         "TotalMilliseconds":  19.7605,
-                         "TotalMinutes":  0.00032934166666666667,
-                         "TotalSeconds":  0.0197605
-                     },
-        "Message":  "",
-        "Category":  "Functional",
-        "Status":  "PASS"
+    "Name": "Theme switching updates settings correctly"
+  },
+  {
+    "Timestamp": "2025-09-16T18:08:56.7143768+00:00",
+    "Message": "Expected 'integration-theme', got 'catppuccin-frappe'. Current theme name should match settings",
+    "Category": "Theme Integration",
+    "Status": "ERROR",
+    "Duration": {
+      "Ticks": 226423,
+      "Days": 0,
+      "Hours": 0,
+      "Milliseconds": 22,
+      "Microseconds": 642,
+      "Nanoseconds": 300,
+      "Minutes": 0,
+      "Seconds": 0,
+      "TotalDays": 2.620636574074074E-07,
+      "TotalHours": 6.289527777777778E-06,
+      "TotalMilliseconds": 22.6423,
+      "TotalMicroseconds": 22642.3,
+      "TotalNanoseconds": 22642300.0,
+      "TotalMinutes": 0.0003773716666666667,
+      "TotalSeconds": 0.0226423
     },
-    {
-        "Name":  "Theme fallback to default when theme not found",
-        "Timestamp":  {
-                          "value":  "\/Date(1758033289341)\/",
-                          "DisplayHint":  2,
-                          "DateTime":  "Tuesday, September 16, 2025 8:34:49 AM"
-                      },
-        "Duration":  {
-                         "Ticks":  345981,
-                         "Days":  0,
-                         "Hours":  0,
-                         "Milliseconds":  34,
-                         "Minutes":  0,
-                         "Seconds":  0,
-                         "TotalDays":  4.004409722222222E-07,
-                         "TotalHours":  9.6105833333333324E-06,
-                         "TotalMilliseconds":  34.5981,
-                         "TotalMinutes":  0.000576635,
-                         "TotalSeconds":  0.0345981
-                     },
-        "Message":  "",
-        "Category":  "Functional",
-        "Status":  "PASS"
+    "Name": "Theme files load correctly with settings integration"
+  },
+  {
+    "Timestamp": "2025-09-16T18:08:56.7225766+00:00",
+    "Message": "Expected '#1a1a1a', got '#1e1e2e'. Background should map to base",
+    "Category": "Theme Integration",
+    "Status": "ERROR",
+    "Duration": {
+      "Ticks": 68850,
+      "Days": 0,
+      "Hours": 0,
+      "Milliseconds": 6,
+      "Microseconds": 885,
+      "Nanoseconds": 0,
+      "Minutes": 0,
+      "Seconds": 0,
+      "TotalDays": 7.96875E-08,
+      "TotalHours": 1.9125E-06,
+      "TotalMilliseconds": 6.885,
+      "TotalMicroseconds": 6885.0,
+      "TotalNanoseconds": 6885000.0,
+      "TotalMinutes": 0.00011475,
+      "TotalSeconds": 0.006885
     },
-    {
-        "Name":  "Logging system integration with application",
-        "Timestamp":  {
-                          "value":  "\/Date(1758033289396)\/",
-                          "DisplayHint":  2,
-                          "DateTime":  "Tuesday, September 16, 2025 8:34:49 AM"
-                      },
-        "Duration":  {
-                         "Ticks":  543838,
-                         "Days":  0,
-                         "Hours":  0,
-                         "Milliseconds":  54,
-                         "Minutes":  0,
-                         "Seconds":  0,
-                         "TotalDays":  6.2944212962962966E-07,
-                         "TotalHours":  1.5106611111111111E-05,
-                         "TotalMilliseconds":  54.3838,
-                         "TotalMinutes":  0.00090639666666666671,
-                         "TotalSeconds":  0.054383799999999996
-                     },
-        "Message":  "",
-        "Category":  "Functional",
-        "Status":  "PASS"
+    "Name": "Theme color mapping works with loaded themes"
+  },
+  {
+    "Timestamp": "2025-09-16T18:08:56.7256257+00:00",
+    "Message": "",
+    "Category": "Theme Integration",
+    "Status": "PASS",
+    "Duration": {
+      "Ticks": 19755,
+      "Days": 0,
+      "Hours": 0,
+      "Milliseconds": 1,
+      "Microseconds": 975,
+      "Nanoseconds": 500,
+      "Minutes": 0,
+      "Seconds": 0,
+      "TotalDays": 2.2864583333333332E-08,
+      "TotalHours": 5.4875E-07,
+      "TotalMilliseconds": 1.9755,
+      "TotalMicroseconds": 1975.5,
+      "TotalNanoseconds": 1975500.0,
+      "TotalMinutes": 3.2925E-05,
+      "TotalSeconds": 0.0019755
     },
-    {
-        "Name":  "Complete application workflow simulation",
-        "Timestamp":  {
-                          "value":  "\/Date(1758033289553)\/",
-                          "DisplayHint":  2,
-                          "DateTime":  "Tuesday, September 16, 2025 8:34:49 AM"
-                      },
-        "Duration":  {
-                         "Ticks":  1555604,
-                         "Days":  0,
-                         "Hours":  0,
-                         "Milliseconds":  155,
-                         "Minutes":  0,
-                         "Seconds":  0,
-                         "TotalDays":  1.8004675925925924E-06,
-                         "TotalHours":  4.3211222222222222E-05,
-                         "TotalMilliseconds":  155.56040000000002,
-                         "TotalMinutes":  0.0025926733333333334,
-                         "TotalSeconds":  0.1555604
-                     },
-        "Message":  "",
-        "Category":  "Functional",
-        "Status":  "PASS"
-    }
+    "Name": "Hex color conversion works with theme colors"
+  },
+  {
+    "Timestamp": "2025-09-16T18:08:56.7342291+00:00",
+    "Message": "",
+    "Category": "Theme Integration",
+    "Status": "PASS",
+    "Duration": {
+      "Ticks": 77356,
+      "Days": 0,
+      "Hours": 0,
+      "Milliseconds": 7,
+      "Microseconds": 735,
+      "Nanoseconds": 600,
+      "Minutes": 0,
+      "Seconds": 0,
+      "TotalDays": 8.953240740740741E-08,
+      "TotalHours": 2.1487777777777777E-06,
+      "TotalMilliseconds": 7.7356,
+      "TotalMicroseconds": 7735.6,
+      "TotalNanoseconds": 7735600.0,
+      "TotalMinutes": 0.00012892666666666666,
+      "TotalSeconds": 0.0077356
+    },
+    "Name": "Invalid theme files are handled gracefully"
+  }
 ]
