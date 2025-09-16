@@ -1,122 +1,146 @@
-﻿[
-    {
-        "Name":  "Complete application startup sequence",
-        "Timestamp":  {
-                          "value":  "\/Date(1758033289278)\/",
-                          "DisplayHint":  2,
-                          "DateTime":  "Tuesday, September 16, 2025 8:34:49 AM"
-                      },
-        "Duration":  {
-                         "Ticks":  1374479,
-                         "Days":  0,
-                         "Hours":  0,
-                         "Milliseconds":  137,
-                         "Minutes":  0,
-                         "Seconds":  0,
-                         "TotalDays":  1.5908321759259258E-06,
-                         "TotalHours":  3.8179972222222218E-05,
-                         "TotalMilliseconds":  137.4479,
-                         "TotalMinutes":  0.0022907983333333333,
-                         "TotalSeconds":  0.13744789999999998
-                     },
-        "Message":  "",
-        "Category":  "Functional",
-        "Status":  "PASS"
+[
+  {
+    "Status": "ERROR",
+    "Timestamp": "2025-09-16T18:07:03.6884733+00:00",
+    "Duration": {
+      "Ticks": 136141,
+      "Days": 0,
+      "Hours": 0,
+      "Milliseconds": 13,
+      "Microseconds": 614,
+      "Nanoseconds": 100,
+      "Minutes": 0,
+      "Seconds": 0,
+      "TotalDays": 1.5757060185185186E-07,
+      "TotalHours": 3.7816944444444444E-06,
+      "TotalMilliseconds": 13.6141,
+      "TotalMicroseconds": 13614.1,
+      "TotalNanoseconds": 13614100.0,
+      "TotalMinutes": 0.00022690166666666667,
+      "TotalSeconds": 0.0136141
     },
-    {
-        "Name":  "Settings version compatibility check",
-        "Timestamp":  {
-                          "value":  "\/Date(1758033289306)\/",
-                          "DisplayHint":  2,
-                          "DateTime":  "Tuesday, September 16, 2025 8:34:49 AM"
-                      },
-        "Duration":  {
-                         "Ticks":  197605,
-                         "Days":  0,
-                         "Hours":  0,
-                         "Milliseconds":  19,
-                         "Minutes":  0,
-                         "Seconds":  0,
-                         "TotalDays":  2.2870949074074073E-07,
-                         "TotalHours":  5.4890277777777776E-06,
-                         "TotalMilliseconds":  19.7605,
-                         "TotalMinutes":  0.00032934166666666667,
-                         "TotalSeconds":  0.0197605
-                     },
-        "Message":  "",
-        "Category":  "Functional",
-        "Status":  "PASS"
+    "Name": "Settings service loads configuration from file",
+    "Category": "Settings",
+    "Message": "Expected '1200', got '1000'. Window width should match"
+  },
+  {
+    "Status": "ERROR",
+    "Timestamp": "2025-09-16T18:07:03.698744+00:00",
+    "Duration": {
+      "Ticks": 88845,
+      "Days": 0,
+      "Hours": 0,
+      "Milliseconds": 8,
+      "Microseconds": 884,
+      "Nanoseconds": 500,
+      "Minutes": 0,
+      "Seconds": 0,
+      "TotalDays": 1.0282986111111111E-07,
+      "TotalHours": 2.467916666666667E-06,
+      "TotalMilliseconds": 8.8845,
+      "TotalMicroseconds": 8884.5,
+      "TotalNanoseconds": 8884500.0,
+      "TotalMinutes": 0.000148075,
+      "TotalSeconds": 0.0088845
     },
-    {
-        "Name":  "Theme fallback to default when theme not found",
-        "Timestamp":  {
-                          "value":  "\/Date(1758033289341)\/",
-                          "DisplayHint":  2,
-                          "DateTime":  "Tuesday, September 16, 2025 8:34:49 AM"
-                      },
-        "Duration":  {
-                         "Ticks":  345981,
-                         "Days":  0,
-                         "Hours":  0,
-                         "Milliseconds":  34,
-                         "Minutes":  0,
-                         "Seconds":  0,
-                         "TotalDays":  4.004409722222222E-07,
-                         "TotalHours":  9.6105833333333324E-06,
-                         "TotalMilliseconds":  34.5981,
-                         "TotalMinutes":  0.000576635,
-                         "TotalSeconds":  0.0345981
-                     },
-        "Message":  "",
-        "Category":  "Functional",
-        "Status":  "PASS"
+    "Name": "Settings service saves configuration to file",
+    "Category": "Settings",
+    "Message": "File does not exist: \\test-settings-save.json. Settings file should be created"
+  },
+  {
+    "Status": "PASS",
+    "Timestamp": "2025-09-16T18:07:03.7064455+00:00",
+    "Duration": {
+      "Ticks": 64394,
+      "Days": 0,
+      "Hours": 0,
+      "Milliseconds": 6,
+      "Microseconds": 439,
+      "Nanoseconds": 400,
+      "Minutes": 0,
+      "Seconds": 0,
+      "TotalDays": 7.45300925925926E-08,
+      "TotalHours": 1.7887222222222221E-06,
+      "TotalMilliseconds": 6.4394,
+      "TotalMicroseconds": 6439.4,
+      "TotalNanoseconds": 6439400.0,
+      "TotalMinutes": 0.00010732333333333334,
+      "TotalSeconds": 0.0064394
     },
-    {
-        "Name":  "Logging system integration with application",
-        "Timestamp":  {
-                          "value":  "\/Date(1758033289396)\/",
-                          "DisplayHint":  2,
-                          "DateTime":  "Tuesday, September 16, 2025 8:34:49 AM"
-                      },
-        "Duration":  {
-                         "Ticks":  543838,
-                         "Days":  0,
-                         "Hours":  0,
-                         "Milliseconds":  54,
-                         "Minutes":  0,
-                         "Seconds":  0,
-                         "TotalDays":  6.2944212962962966E-07,
-                         "TotalHours":  1.5106611111111111E-05,
-                         "TotalMilliseconds":  54.3838,
-                         "TotalMinutes":  0.00090639666666666671,
-                         "TotalSeconds":  0.054383799999999996
-                     },
-        "Message":  "",
-        "Category":  "Functional",
-        "Status":  "PASS"
+    "Name": "Default settings are returned when file missing",
+    "Category": "Settings",
+    "Message": ""
+  },
+  {
+    "Status": "ERROR",
+    "Timestamp": "2025-09-16T18:07:03.7200167+00:00",
+    "Duration": {
+      "Ticks": 124057,
+      "Days": 0,
+      "Hours": 0,
+      "Milliseconds": 12,
+      "Microseconds": 405,
+      "Nanoseconds": 700,
+      "Minutes": 0,
+      "Seconds": 0,
+      "TotalDays": 1.4358449074074074E-07,
+      "TotalHours": 3.446027777777778E-06,
+      "TotalMilliseconds": 12.4057,
+      "TotalMicroseconds": 12405.7,
+      "TotalNanoseconds": 12405700.0,
+      "TotalMinutes": 0.00020676166666666666,
+      "TotalSeconds": 0.0124057
     },
-    {
-        "Name":  "Complete application workflow simulation",
-        "Timestamp":  {
-                          "value":  "\/Date(1758033289553)\/",
-                          "DisplayHint":  2,
-                          "DateTime":  "Tuesday, September 16, 2025 8:34:49 AM"
-                      },
-        "Duration":  {
-                         "Ticks":  1555604,
-                         "Days":  0,
-                         "Hours":  0,
-                         "Milliseconds":  155,
-                         "Minutes":  0,
-                         "Seconds":  0,
-                         "TotalDays":  1.8004675925925924E-06,
-                         "TotalHours":  4.3211222222222222E-05,
-                         "TotalMilliseconds":  155.56040000000002,
-                         "TotalMinutes":  0.0025926733333333334,
-                         "TotalSeconds":  0.1555604
-                     },
-        "Message":  "",
-        "Category":  "Functional",
-        "Status":  "PASS"
-    }
+    "Name": "Theme service loads theme configuration",
+    "Category": "Settings",
+    "Message": "Expected 'Test Theme', got 'Default Dark'. Theme name should match"
+  },
+  {
+    "Status": "PASS",
+    "Timestamp": "2025-09-16T18:07:03.7341822+00:00",
+    "Duration": {
+      "Ticks": 127632,
+      "Days": 0,
+      "Hours": 0,
+      "Milliseconds": 12,
+      "Microseconds": 763,
+      "Nanoseconds": 200,
+      "Minutes": 0,
+      "Seconds": 0,
+      "TotalDays": 1.4772222222222223E-07,
+      "TotalHours": 3.545333333333333E-06,
+      "TotalMilliseconds": 12.7632,
+      "TotalMicroseconds": 12763.2,
+      "TotalNanoseconds": 12763200.0,
+      "TotalMinutes": 0.00021272,
+      "TotalSeconds": 0.0127632
+    },
+    "Name": "Theme color mapping returns correct UI colors",
+    "Category": "Settings",
+    "Message": ""
+  },
+  {
+    "Status": "PASS",
+    "Timestamp": "2025-09-16T18:07:03.7552344+00:00",
+    "Duration": {
+      "Ticks": 195450,
+      "Days": 0,
+      "Hours": 0,
+      "Milliseconds": 19,
+      "Microseconds": 545,
+      "Nanoseconds": 0,
+      "Minutes": 0,
+      "Seconds": 0,
+      "TotalDays": 2.2621527777777778E-07,
+      "TotalHours": 5.429166666666667E-06,
+      "TotalMilliseconds": 19.545,
+      "TotalMicroseconds": 19545.0,
+      "TotalNanoseconds": 19545000.0,
+      "TotalMinutes": 0.00032575,
+      "TotalSeconds": 0.019545
+    },
+    "Name": "Hex color strings convert to Color objects",
+    "Category": "Settings",
+    "Message": ""
+  }
 ]
