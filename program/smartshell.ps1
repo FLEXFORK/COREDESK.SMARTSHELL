@@ -1,4 +1,12 @@
 
+param(
+  [switch]$ran,
+  [switch]$NoSplash
+)
+
+# Add Windows Forms support
+Add-Type -AssemblyName System.Windows.Forms
+Add-Type -AssemblyName System.Drawing
 
 <#
 
@@ -12,12 +20,6 @@
 # --------  CURRENT FILE  ------ #
 # /ROOTDIR//PROGRAM/SMARTSHELL.PS1
 # ---------  POWERSHELL  ------- #
-
-
-param(
-  [switch]$ran,
-  [switch]$NoSplash
-)
 
 # Set working directory to script location
 Set-Location $PSScriptRoot

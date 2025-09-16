@@ -15,7 +15,7 @@
 
 function Get-WindowLogic {
     return @{
-        Version = "1.0.0"
+        Version = "1.0.1"
         Author = "SmartShell Team"
         LastUpdate = (Get-Date)
     }
