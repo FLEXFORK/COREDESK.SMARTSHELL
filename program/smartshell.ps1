@@ -27,6 +27,9 @@ Set-Location $PSScriptRoot
 # Load settings service
 . "source\services\settings.service.ps1"
 
+# Load logger service
+. "source\services\logger.service.ps1"
+
 # Load splash components
 . "source\views\splash.view.ps1"
 . "source\scripts\splash.script.ps1"
@@ -42,8 +45,13 @@ function Start-SmartShell {
   )
 
   try {
+    # Log application startup
+    Write-InfoLog "SmartShell application starting" -Source "Main"
+    Write-InfoLog "Parameters: ShowSplash=$ShowSplash, RandomMode=$RandomMode" -Source "Main"
+
     if ($ShowSplash) {
       Write-Host "Starting SmartShell with splash screen..." -ForegroundColor Green
+      Write-InfoLog "Starting with splash screen" -Source "Main"
 
       # Initialize splash logic (loading, config, etc.)
       $splashReady = Initialize-SplashLogic
@@ -51,29 +59,44 @@ function Start-SmartShell {
       if ($splashReady) {
         # Show splash screen
         $duration = Get-SplashDuration
+        Write-InfoLog "Showing splash screen for $duration seconds" -Source "Splash"
         Show-SplashScreen -Duration $duration
       }
     }
 
     Write-Host "Launching main window..." -ForegroundColor Green
+    Write-InfoLog "Launching main window" -Source "Main"
 
     # Launch main window
     Show-MainWindow -RandomMode $RandomMode
 
     Write-Host "SmartShell started successfully!" -ForegroundColor Cyan
+    Write-InfoLog "SmartShell started successfully" -Source "Main"
 
   }
   catch {
-    Write-Error "Failed to start SmartShell: $($_.Exception.Message)"
+    $errorMsg = "Failed to start SmartShell: $($_.Exception.Message)"
+    Write-Error $errorMsg
+    Write-ErrorLog -ErrorMessage $errorMsg -Exception $_.Exception -CallStack $_.ScriptStackTrace -Source "Main"
     exit 1
+  }
+  finally {
+    # Close logger session when application ends
+    Write-InfoLog "SmartShell application ending" -Source "Main"
+    Close-Logger
   }
 }
 
 # Main execution
+Write-InfoLog "SmartShell entry point reached" -Source "Main"
+Write-InfoLog "Command line arguments: ran=$ran, NoSplash=$NoSplash" -Source "Main"
+
 if ($ran) {
+  Write-InfoLog "Starting in random mode" -Source "Main"
   Start-SmartShell -ShowSplash (!$NoSplash) -RandomMode $true
 }
 else {
+  Write-InfoLog "Starting in normal mode" -Source "Main"
   Start-SmartShell -ShowSplash (!$NoSplash) -RandomMode $false
 }
 
