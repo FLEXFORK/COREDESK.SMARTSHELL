@@ -21,6 +21,42 @@ $script:LogSession = @{
   IsInitialized = $false
 }
 
+function Remove-OldLogFiles {
+  param(
+    [Parameter(Mandatory)]
+    [string]$LogDirectory,
+
+    [int]$MaxFiles = 10
+  )
+
+  try {
+    if (-not (Test-Path $LogDirectory)) {
+      return
+    }
+
+    # Get all .log files in the directory, sorted by creation time (oldest first)
+    $logFiles = Get-ChildItem -Path $LogDirectory -Filter "*.log" | Sort-Object CreationTime
+
+    # If we have more than MaxFiles, delete the oldest ones
+    if ($logFiles.Count -ge $MaxFiles) {
+      $filesToDelete = $logFiles | Select-Object -First ($logFiles.Count - $MaxFiles + 1)
+
+      foreach ($file in $filesToDelete) {
+        try {
+          Remove-Item -Path $file.FullName -Force
+          Write-Host "Deleted old log file: $($file.Name)" -ForegroundColor Yellow
+        }
+        catch {
+          Write-Warning "Failed to delete log file: $($file.Name) - $($_.Exception.Message)"
+        }
+      }
+    }
+  }
+  catch {
+    Write-Warning "Failed to perform log rotation in $LogDirectory : $($_.Exception.Message)"
+  }
+}
+
 function Initialize-Logger {
   param(
     [string]$LogDirectory = "$PSScriptRoot\..\..\logs",
@@ -36,6 +72,10 @@ function Initialize-Logger {
     if (-not (Test-Path $ErrorDirectory)) {
       New-Item -Path $ErrorDirectory -ItemType Directory -Force | Out-Null
     }
+
+    # Perform log rotation before creating new files
+    Remove-OldLogFiles -LogDirectory $LogDirectory -MaxFiles 10
+    Remove-OldLogFiles -LogDirectory $ErrorDirectory -MaxFiles 10
 
     # Generate timestamp for filenames
     $timestamp = Get-Date -Format "yyyy-MM-dd_HH-mm-ss"
@@ -213,6 +253,38 @@ function Get-LogFilePaths {
   }
 }
 
+function Get-LogRotationStats {
+  param(
+    [string]$LogDirectory = "$PSScriptRoot\..\..\logs",
+    [string]$ErrorDirectory = "$PSScriptRoot\..\..\logs\errors"
+  )
+
+  $stats = @{
+    MainLogs  = 0
+    ErrorLogs = 0
+    TotalSize = 0
+  }
+
+  try {
+    if (Test-Path $LogDirectory) {
+      $mainLogFiles = Get-ChildItem -Path $LogDirectory -Filter "*.log"
+      $stats.MainLogs = $mainLogFiles.Count
+      $stats.TotalSize += ($mainLogFiles | Measure-Object -Property Length -Sum).Sum
+    }
+
+    if (Test-Path $ErrorDirectory) {
+      $errorLogFiles = Get-ChildItem -Path $ErrorDirectory -Filter "*.log"
+      $stats.ErrorLogs = $errorLogFiles.Count
+      $stats.TotalSize += ($errorLogFiles | Measure-Object -Property Length -Sum).Sum
+    }
+  }
+  catch {
+    Write-Warning "Failed to get log rotation stats: $($_.Exception.Message)"
+  }
+
+  return $stats
+}
+
 function Start-TerminalLogging {
   param(
     [string]$Command,
@@ -246,11 +318,16 @@ function Close-Logger {
     $endTime = Get-Date
     $duration = $endTime - $script:LogSession.StartTime
 
+    # Get log rotation statistics
+    $rotationStats = Get-LogRotationStats
+    $totalSizeKB = [math]::Round($rotationStats.TotalSize / 1024, 2)
+
     $sessionFooter = @"
 
 ================================================================================
 Session End: $($endTime.ToString("yyyy-MM-dd HH:mm:ss"))
 Duration: $($duration.ToString("hh\:mm\:ss"))
+Log Files: $($rotationStats.MainLogs) main, $($rotationStats.ErrorLogs) error (Total: $totalSizeKB KB)
 ================================================================================
 "@
 
