@@ -66,7 +66,7 @@ function Get-DefaultSettings {
       customTitlebar = $true
     }
     application = @{
-      version    = "1.0.1"
+      version    = "1.0.2"
       name       = "SmartShell"
       showSplash = $true
     }

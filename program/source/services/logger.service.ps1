@@ -38,8 +38,8 @@ function Remove-OldLogFiles {
     $logFiles = Get-ChildItem -Path $LogDirectory -Filter "*.log" | Sort-Object CreationTime
 
     # If we have more than MaxFiles, delete the oldest ones
-    if ($logFiles.Count -ge $MaxFiles) {
-      $filesToDelete = $logFiles | Select-Object -First ($logFiles.Count - $MaxFiles + 1)
+    if ($logFiles.Count -gt $MaxFiles) {
+      $filesToDelete = $logFiles | Select-Object -First ($logFiles.Count - $MaxFiles)
 
       foreach ($file in $filesToDelete) {
         try {
@@ -60,10 +60,15 @@ function Remove-OldLogFiles {
 function Initialize-Logger {
   param(
     [string]$LogDirectory = "$PSScriptRoot\..\..\logs",
-    [string]$ErrorDirectory = "$PSScriptRoot\..\..\logs\errors"
+    [string]$ErrorDirectory = ""
   )
 
   try {
+    # If no error directory specified, use subdirectory of log directory
+    if ([string]::IsNullOrEmpty($ErrorDirectory)) {
+      $ErrorDirectory = Join-Path $LogDirectory "errors"
+    }
+
     # Ensure log directories exist
     if (-not (Test-Path $LogDirectory)) {
       New-Item -Path $LogDirectory -ItemType Directory -Force | Out-Null

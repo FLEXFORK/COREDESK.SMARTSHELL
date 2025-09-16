@@ -2,7 +2,7 @@
 
 | Field | Value |
 |-------|-------|
-| Version | 1.0.1 |
+| Version | 1.0.2 |
 | Release Date | 2025-09-16 |
 | Release Channel | stable |
 | Commit | 14bb8de |
@@ -10,10 +10,17 @@
 
 ## Summary
 
-Patch release of SmartShell with GUI improvements and project structure enhancements. Streamlined main window interface and added comprehensive project documentation.
+Patch release of SmartShell with comprehensive logging system, theme improvements, and log rotation functionality. Enhanced application monitoring and streamlined theme color management.
 
 ## Highlights
 
+- Comprehensive logger service with timestamped log files
+- Automatic log rotation maintaining 10 most recent files
+- Terminal input/output logging with error tracking
+- Simplified theme system using direct Catppuccin colors
+- Removed hardcoded application color mappings from themes
+- Enhanced error handling and session management
+- Silent application launch capability
 - Core PowerShell launcher script `program/smartshell.ps1`
 - Streamlined main window GUI with minimal interface
 - Splash screen with loading sequence and branding

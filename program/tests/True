@@ -1,0 +1,98 @@
+﻿[
+    {
+        "Name":  "Logger initialization creates required directories",
+        "Timestamp":  {
+                          "value":  "\/Date(1758033417061)\/",
+                          "DisplayHint":  2,
+                          "DateTime":  "Tuesday, September 16, 2025 8:36:57 AM"
+                      },
+        "Duration":  {
+                         "Ticks":  345773,
+                         "Days":  0,
+                         "Hours":  0,
+                         "Milliseconds":  34,
+                         "Minutes":  0,
+                         "Seconds":  0,
+                         "TotalDays":  4.0020023148148147E-07,
+                         "TotalHours":  9.6048055555555544E-06,
+                         "TotalMilliseconds":  34.5773,
+                         "TotalMinutes":  0.00057628833333333337,
+                         "TotalSeconds":  0.0345773
+                     },
+        "Message":  "",
+        "Category":  "Logger",
+        "Status":  "PASS"
+    },
+    {
+        "Name":  "Logger creates timestamped log files",
+        "Timestamp":  {
+                          "value":  "\/Date(1758033417164)\/",
+                          "DisplayHint":  2,
+                          "DateTime":  "Tuesday, September 16, 2025 8:36:57 AM"
+                      },
+        "Duration":  {
+                         "Ticks":  987216,
+                         "Days":  0,
+                         "Hours":  0,
+                         "Milliseconds":  98,
+                         "Minutes":  0,
+                         "Seconds":  0,
+                         "TotalDays":  1.1426111111111111E-06,
+                         "TotalHours":  2.7422666666666664E-05,
+                         "TotalMilliseconds":  98.721600000000009,
+                         "TotalMinutes":  0.00164536,
+                         "TotalSeconds":  0.098721599999999993
+                     },
+        "Message":  "",
+        "Category":  "Logger",
+        "Status":  "PASS"
+    },
+    {
+        "Name":  "Error logs are written to error directory",
+        "Timestamp":  {
+                          "value":  "\/Date(1758033417232)\/",
+                          "DisplayHint":  2,
+                          "DateTime":  "Tuesday, September 16, 2025 8:36:57 AM"
+                      },
+        "Duration":  {
+                         "Ticks":  675151,
+                         "Days":  0,
+                         "Hours":  0,
+                         "Milliseconds":  67,
+                         "Minutes":  0,
+                         "Seconds":  0,
+                         "TotalDays":  7.8142476851851853E-07,
+                         "TotalHours":  1.8754194444444443E-05,
+                         "TotalMilliseconds":  67.5151,
+                         "TotalMinutes":  0.0011252516666666666,
+                         "TotalSeconds":  0.0675151
+                     },
+        "Message":  "",
+        "Category":  "Logger",
+        "Status":  "PASS"
+    },
+    {
+        "Name":  "Log rotation maintains maximum file count",
+        "Timestamp":  {
+                          "value":  "\/Date(1758033417550)\/",
+                          "DisplayHint":  2,
+                          "DateTime":  "Tuesday, September 16, 2025 8:36:57 AM"
+                      },
+        "Duration":  {
+                         "Ticks":  3182647,
+                         "Days":  0,
+                         "Hours":  0,
+                         "Milliseconds":  318,
+                         "Minutes":  0,
+                         "Seconds":  0,
+                         "TotalDays":  3.683619212962963E-06,
+                         "TotalHours":  8.8406861111111108E-05,
+                         "TotalMilliseconds":  318.2647,
+                         "TotalMinutes":  0.0053044116666666665,
+                         "TotalSeconds":  0.3182647
+                     },
+        "Message":  "",
+        "Category":  "Logger",
+        "Status":  "PASS"
+    }
+]

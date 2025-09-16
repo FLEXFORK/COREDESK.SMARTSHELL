@@ -56,7 +56,7 @@ function Show-SplashScreen {
 
   # Create version label with accent
   $versionLabel = New-Object System.Windows.Forms.Label
-  $versionLabel.Text = "Version 1.0.1"
+  $versionLabel.Text = "Version 1.0.2"
   $versionLabel.Font = New-Object System.Drawing.Font("Segoe UI", 12, [System.Drawing.FontStyle]::Bold)
   $versionLabel.ForeColor = [System.Drawing.Color]::FromArgb(168, 85, 247)
   $versionLabel.BackColor = [System.Drawing.Color]::Transparent

@@ -1,0 +1,122 @@
+﻿[
+    {
+        "Name":  "Complete application startup sequence",
+        "Timestamp":  {
+                          "value":  "\/Date(1758033289278)\/",
+                          "DisplayHint":  2,
+                          "DateTime":  "Tuesday, September 16, 2025 8:34:49 AM"
+                      },
+        "Duration":  {
+                         "Ticks":  1374479,
+                         "Days":  0,
+                         "Hours":  0,
+                         "Milliseconds":  137,
+                         "Minutes":  0,
+                         "Seconds":  0,
+                         "TotalDays":  1.5908321759259258E-06,
+                         "TotalHours":  3.8179972222222218E-05,
+                         "TotalMilliseconds":  137.4479,
+                         "TotalMinutes":  0.0022907983333333333,
+                         "TotalSeconds":  0.13744789999999998
+                     },
+        "Message":  "",
+        "Category":  "Functional",
+        "Status":  "PASS"
+    },
+    {
+        "Name":  "Settings version compatibility check",
+        "Timestamp":  {
+                          "value":  "\/Date(1758033289306)\/",
+                          "DisplayHint":  2,
+                          "DateTime":  "Tuesday, September 16, 2025 8:34:49 AM"
+                      },
+        "Duration":  {
+                         "Ticks":  197605,
+                         "Days":  0,
+                         "Hours":  0,
+                         "Milliseconds":  19,
+                         "Minutes":  0,
+                         "Seconds":  0,
+                         "TotalDays":  2.2870949074074073E-07,
+                         "TotalHours":  5.4890277777777776E-06,
+                         "TotalMilliseconds":  19.7605,
+                         "TotalMinutes":  0.00032934166666666667,
+                         "TotalSeconds":  0.0197605
+                     },
+        "Message":  "",
+        "Category":  "Functional",
+        "Status":  "PASS"
+    },
+    {
+        "Name":  "Theme fallback to default when theme not found",
+        "Timestamp":  {
+                          "value":  "\/Date(1758033289341)\/",
+                          "DisplayHint":  2,
+                          "DateTime":  "Tuesday, September 16, 2025 8:34:49 AM"
+                      },
+        "Duration":  {
+                         "Ticks":  345981,
+                         "Days":  0,
+                         "Hours":  0,
+                         "Milliseconds":  34,
+                         "Minutes":  0,
+                         "Seconds":  0,
+                         "TotalDays":  4.004409722222222E-07,
+                         "TotalHours":  9.6105833333333324E-06,
+                         "TotalMilliseconds":  34.5981,
+                         "TotalMinutes":  0.000576635,
+                         "TotalSeconds":  0.0345981
+                     },
+        "Message":  "",
+        "Category":  "Functional",
+        "Status":  "PASS"
+    },
+    {
+        "Name":  "Logging system integration with application",
+        "Timestamp":  {
+                          "value":  "\/Date(1758033289396)\/",
+                          "DisplayHint":  2,
+                          "DateTime":  "Tuesday, September 16, 2025 8:34:49 AM"
+                      },
+        "Duration":  {
+                         "Ticks":  543838,
+                         "Days":  0,
+                         "Hours":  0,
+                         "Milliseconds":  54,
+                         "Minutes":  0,
+                         "Seconds":  0,
+                         "TotalDays":  6.2944212962962966E-07,
+                         "TotalHours":  1.5106611111111111E-05,
+                         "TotalMilliseconds":  54.3838,
+                         "TotalMinutes":  0.00090639666666666671,
+                         "TotalSeconds":  0.054383799999999996
+                     },
+        "Message":  "",
+        "Category":  "Functional",
+        "Status":  "PASS"
+    },
+    {
+        "Name":  "Complete application workflow simulation",
+        "Timestamp":  {
+                          "value":  "\/Date(1758033289553)\/",
+                          "DisplayHint":  2,
+                          "DateTime":  "Tuesday, September 16, 2025 8:34:49 AM"
+                      },
+        "Duration":  {
+                         "Ticks":  1555604,
+                         "Days":  0,
+                         "Hours":  0,
+                         "Milliseconds":  155,
+                         "Minutes":  0,
+                         "Seconds":  0,
+                         "TotalDays":  1.8004675925925924E-06,
+                         "TotalHours":  4.3211222222222222E-05,
+                         "TotalMilliseconds":  155.56040000000002,
+                         "TotalMinutes":  0.0025926733333333334,
+                         "TotalSeconds":  0.1555604
+                     },
+        "Message":  "",
+        "Category":  "Functional",
+        "Status":  "PASS"
+    }
+]
