@@ -2,21 +2,26 @@
 
 | Field | Value |
 |-------|-------|
-| Version | 1.0.0 |
+| Version | 1.0.1 |
 | Release Date | 2025-09-16 |
 | Release Channel | stable |
-| Commit | db4d16b |
+| Commit | 14bb8de |
 | License | Refer to `docs/license.md` |
 
 ## Summary
 
-Initial stable public release of SmartShell. Establishes the core window/view system, modular script loading, theming support, and baseline test scaffolding.
+Patch release of SmartShell with GUI improvements and project structure enhancements. Streamlined main window interface and added comprehensive project documentation.
 
 ## Highlights
 
 - Core PowerShell launcher script `program/smartshell.ps1`
+- Streamlined main window GUI with minimal interface
+- Splash screen with loading sequence and branding
 - Configurable settings and themes under `program/source/configs/`
 - Window script & view pair (`window.script.ps1`, `window.view.ps1`)
+- VS Code workspace configuration (.vscode/launch.json, extensions.json)
+- Comprehensive documentation (version.md, changes.md, contribute.md, license.md)
+- Windows batch launcher (start.cmd)
 - Test suite foundation in `program/tests/`
 - Asset pipeline (fonts, icons, images) structured for expansion
 
