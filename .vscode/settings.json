@@ -1,0 +1,58 @@
+{
+    // ---------- Shrink pinned tabs ----------
+    "workbench.editor.pinnedTabSizing": "compact",
+    // ---------- Editor basics ----------
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.renderWhitespace": "selection",
+    "editor.minimap.enabled": false,
+    "editor.guides.bracketPairs": true,
+    "editor.stickyScroll.enabled": true,
+    "editor.cursorBlinking": "smooth",
+    "editor.suggestSelection": "first",
+    // ---------- Formatting / lint assist ----------
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        // Use "explicit" to avoid unexpected slow fixes; run manually via Command Palette if needed
+        "source.organizeImports": "explicit",
+        "source.fixAll": "explicit"
+    },
+    // ---------- Files hygiene ----------
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "files.eol": "\n",
+    "files.autoSave": "off",
+    // ---------- Explorer & search ----------
+    "explorer.compactFolders": false,
+    "search.useIgnoreFiles": true,
+    "search.followSymlinks": true,
+    // ---------- TypeScript / JavaScript ----------
+    "typescript.tsserver.maxTsServerMemory": 3072,
+    "typescript.preferences.importModuleSpecifier": "non-relative",
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "typescript.suggest.completeFunctionCalls": true,
+    // ---------- Git ----------
+    "git.autofetch": true,
+    "git.pruneOnFetch": true,
+    "git.enableSmartCommit": true,
+    "git.confirmSync": false,
+    "git.allowForcePush": true,
+    "git.mergeEditor": true,
+    // ---------- Terminal ----------
+    "terminal.integrated.defaultProfile.windows": "PowerShell",
+    "terminal.integrated.enablePersistentSessions": true,
+    "terminal.integrated.copyOnSelection": true,
+    // ---------- Testing ----------
+    "testing.automaticallyOpenPeekView": "failureAnywhere",
+    // ---------- UI polish ----------
+    "workbench.editor.showTabs": "multiple",
+    "workbench.startupEditor": "none",
+    "workbench.tree.indent": 12,
+    "breadcrumbs.enabled": true,
+    // ---------- Performance / telemetry ----------
+    "editor.largeFileOptimizations": true,
+    "telemetry.telemetryLevel": "off",
+    // ---------- Security ----------
+    "security.workspace.trust.enabled": true
+}
