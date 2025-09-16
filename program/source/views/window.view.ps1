@@ -1,10 +1,9 @@
-
-
 <#
 
 - SMARTSHELL.PS1 IS THE MAIN PROGRAM ENTRYPOINT
 - WINDOW.VIEW.PS1 IS THE MAIN PROGRAM GUI
 - WINDOW.SCRIPT.PS1 IS THE MAIN PROGRAM LOGIC
+- SETTINGS.SERVICE.PS1 HANDLES APPLICATION SETTINGS
 
 #>
 
@@ -22,18 +21,27 @@ function Show-MainWindow {
     [bool]$RandomMode = $false
   )
 
+  # Load window settings from configuration
+  $windowSettings = Get-WindowSettings
+  $settings = Get-AppSettings
+
+  # Parse colors from settings
+  $backgroundColor = ConvertFrom-RgbString $settings.theme.backgroundColor
+  $foregroundColor = ConvertFrom-RgbString $settings.theme.foregroundColor
+
   # Create main form
   $mainForm = New-Object System.Windows.Forms.Form
-  $mainForm.Text = if ($RandomMode) { "SmartShell - Random Mode" } else { "SmartShell" }
-  $mainForm.Size = New-Object System.Drawing.Size(1400, 900)
-  $mainForm.StartPosition = "CenterScreen"
-  $mainForm.BackColor = [System.Drawing.Color]::FromArgb(15, 15, 15)
-  $mainForm.ForeColor = [System.Drawing.Color]::FromArgb(240, 240, 240)
-  $mainForm.MinimumSize = New-Object System.Drawing.Size(1200, 700)
+  $mainForm.Text = if ($RandomMode) { "$($settings.application.name) - Random Mode" } else { $settings.application.name }
+  $mainForm.Size = New-Object System.Drawing.Size($windowSettings.width, $windowSettings.height)
+  $mainForm.StartPosition = $windowSettings.startPosition
+  $mainForm.BackColor = $backgroundColor
+  $mainForm.ForeColor = $foregroundColor
+  $mainForm.FormBorderStyle = "FixedSingle"
+  $mainForm.MaximizeBox = $false
 
   # Create main content area (blank)
   $mainContent = New-Object System.Windows.Forms.Panel
-  $mainContent.BackColor = [System.Drawing.Color]::FromArgb(15, 15, 15)
+  $mainContent.BackColor = $backgroundColor
   $mainContent.Dock = "Fill"
 
   # Add components to form

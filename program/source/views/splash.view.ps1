@@ -1,10 +1,9 @@
-
-
 <#
 
 - SMARTSHELL.PS1 IS THE MAIN PROGRAM ENTRYPOINT
 - WINDOW.VIEW.PS1 IS THE MAIN PROGRAM GUI
 - WINDOW.SCRIPT.PS1 IS THE MAIN PROGRAM LOGIC
+- SETTINGS.SERVICE.PS1 HANDLES APPLICATION SETTINGS
 
 #>
 
@@ -13,9 +12,6 @@
 # /ROOTDIR//PROGRAM/SOURCE/VIEWS/SPLASH.VIEW.PS1
 # ---------------  POWERSHELL  --------------- #
 
-
-Add-Type -AssemblyName System.Windows.Forms
-Add-Type -AssemblyName System.Drawing
 
 # Add Windows Forms support
 Add-Type -AssemblyName System.Windows.Forms

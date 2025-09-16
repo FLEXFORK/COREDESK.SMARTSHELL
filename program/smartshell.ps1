@@ -1,3 +1,16 @@
+<#
+
+- SMARTSHELL.PS1 IS THE MAIN PROGRAM ENTRYPOINT
+- WINDOW.VIEW.PS1 IS THE MAIN PROGRAM GUI
+- WINDOW.SCRIPT.PS1 IS THE MAIN PROGRAM LOGIC
+- SETTINGS.SERVICE.PS1 HANDLES APPLICATION SETTINGS
+
+#>
+
+
+# --------  CURRENT FILE  ------ #
+# /ROOTDIR//PROGRAM/SMARTSHELL.PS1
+# ---------  POWERSHELL  ------- #
 
 param(
   [switch]$ran,
@@ -8,21 +21,11 @@ param(
 Add-Type -AssemblyName System.Windows.Forms
 Add-Type -AssemblyName System.Drawing
 
-<#
-
-- SMARTSHELL.PS1 IS THE MAIN PROGRAM ENTRYPOINT
-- WINDOW.VIEW.PS1 IS THE MAIN PROGRAM GUI
-- WINDOW.SCRIPT.PS1 IS THE MAIN PROGRAM LOGIC
-
-#>
-
-
-# --------  CURRENT FILE  ------ #
-# /ROOTDIR//PROGRAM/SMARTSHELL.PS1
-# ---------  POWERSHELL  ------- #
-
 # Set working directory to script location
 Set-Location $PSScriptRoot
+
+# Load settings service
+. "source\services\settings.service.ps1"
 
 # Load splash components
 . "source\views\splash.view.ps1"
