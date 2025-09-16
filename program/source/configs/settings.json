@@ -1,20 +1,21 @@
-{
-  "window": {
-    "width": 1000,
-    "height": 800,
-    "startPosition": "CenterScreen",
-    "resizable": false,
-    "frameless": true,
-    "customTitlebar": true
-  },
-  "application": {
-    "version": "1.0.1",
-    "name": "SmartShell",
-    "showSplash": true
-  },
-  "theme": {
-    "backgroundColor": "rgb(15,15,15)",
-    "foregroundColor": "rgb(240,240,240)",
-    "accentColor": "rgb(168,85,247)"
-  }
+﻿{
+    "window":  {
+                   "width":  1000,
+                   "height":  800,
+                   "startPosition":  "CenterScreen",
+                   "resizable":  false,
+                   "frameless":  true,
+                   "customTitlebar":  true
+               },
+    "application":  {
+                        "version":  "1.0.1",
+                        "name":  "SmartShell",
+                        "showSplash":  true
+                    },
+    "theme":  {
+                  "current":  "catppuccin-frappe",
+                  "backgroundColor":  "rgb(15,15,15)",
+                  "foregroundColor":  "rgb(240,240,240)",
+                  "accentColor":  "rgb(168,85,247)"
+              }
 }

@@ -71,6 +71,7 @@ function Get-DefaultSettings {
       showSplash = $true
     }
     theme       = @{
+      current         = "catppuccin-frappe"
       backgroundColor = "rgb(15,15,15)"
       foregroundColor = "rgb(240,240,240)"
       accentColor     = "rgb(168,85,247)"
@@ -119,4 +120,103 @@ function Update-WindowSettings {
   return Set-WindowSettings -Width $Width -Height $Height
 }
 
+function Get-Theme {
+  param(
+    [string]$ThemeName = "",
+    [string]$ThemePath = "$PSScriptRoot\..\configs\themes"
+  )
 
+  # Get current theme from settings if not specified
+  if ([string]::IsNullOrEmpty($ThemeName)) {
+    $settings = Get-AppSettings
+    $ThemeName = $settings.theme.current
+  }
+
+  $themeFile = Join-Path $ThemePath "$ThemeName.json"
+
+  try {
+    if (Test-Path $themeFile) {
+      $themeContent = Get-Content $themeFile -Raw
+      $theme = $themeContent | ConvertFrom-Json
+      return $theme
+    }
+    else {
+      Write-Warning "Theme file not found: $themeFile"
+      return Get-DefaultTheme
+    }
+  }
+  catch {
+    Write-Error "Failed to load theme: $($_.Exception.Message)"
+    return Get-DefaultTheme
+  }
+}
+
+function Get-DefaultTheme {
+  return @{
+    name        = "Default Dark"
+    type        = "dark"
+    application = @{
+      background     = "#1e1e2e"
+      foreground     = "#cdd6f4"
+      accent         = "#cba6f7"
+      titlebar       = "#181825"
+      surface        = "#313244"
+      border         = "#45475a"
+      hover          = "#45475a"
+      closeButton    = "#f38ba8"
+      minimizeButton = "#f9e2af"
+    }
+  }
+}
+
+function Set-CurrentTheme {
+  param(
+    [string]$ThemeName
+  )
+
+  $settings = Get-AppSettings
+  $settings.theme.current = $ThemeName
+  return Set-AppSettings -Settings $settings
+}
+
+function ConvertFrom-HexString {
+  param([string]$HexString)
+
+  # Remove # if present
+  $hex = $HexString -replace '^#', ''
+
+  if ($hex.Length -eq 6) {
+    $r = [Convert]::ToInt32($hex.Substring(0, 2), 16)
+    $g = [Convert]::ToInt32($hex.Substring(2, 2), 16)
+    $b = [Convert]::ToInt32($hex.Substring(4, 2), 16)
+    return [System.Drawing.Color]::FromArgb($r, $g, $b)
+  }
+  return [System.Drawing.Color]::Black
+}
+
+function Get-AvailableThemes {
+  param(
+    [string]$ThemePath = "$PSScriptRoot\..\configs\themes"
+  )
+
+  $themes = @()
+  if (Test-Path $ThemePath) {
+    $themeFiles = Get-ChildItem -Path $ThemePath -Filter "*.json"
+    foreach ($file in $themeFiles) {
+      $themeName = [System.IO.Path]::GetFileNameWithoutExtension($file.Name)
+      try {
+        $themeContent = Get-Content $file.FullName -Raw | ConvertFrom-Json
+        $themes += @{
+          id   = $themeName
+          name = $themeContent.name
+          type = $themeContent.type
+          file = $file.Name
+        }
+      }
+      catch {
+        Write-Warning "Failed to load theme: $($file.Name)"
+      }
+    }
+  }
+  return $themes
+}

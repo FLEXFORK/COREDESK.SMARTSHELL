@@ -25,11 +25,16 @@ function Show-MainWindow {
   $windowSettings = Get-WindowSettings
   $settings = Get-AppSettings
 
-  # Parse colors from settings
-  $backgroundColor = ConvertFrom-RgbString $settings.theme.backgroundColor
-  $foregroundColor = ConvertFrom-RgbString $settings.theme.foregroundColor
+  # Load current theme
+  $theme = Get-Theme
 
-  # Create main form (frameless)
+  # Parse colors from theme
+  $backgroundColor = ConvertFrom-HexString $theme.application.background
+  $foregroundColor = ConvertFrom-HexString $theme.application.foreground
+  $titlebarColor = ConvertFrom-HexString $theme.application.titlebar
+  $hoverColor = ConvertFrom-HexString $theme.application.hover
+  $closeButtonColor = ConvertFrom-HexString $theme.application.closeButton
+  $minimizeButtonColor = ConvertFrom-HexString $theme.application.minimizeButton  # Create main form (frameless)
   $mainForm = New-Object System.Windows.Forms.Form
   $mainForm.Text = if ($RandomMode) { "$($settings.application.name) - Random Mode" } else { $settings.application.name }
   $mainForm.Size = New-Object System.Drawing.Size($windowSettings.width, $windowSettings.height)
@@ -43,7 +48,7 @@ function Show-MainWindow {
   $titleBar = New-Object System.Windows.Forms.Panel
   $titleBar.Size = New-Object System.Drawing.Size($windowSettings.width, 35)
   $titleBar.Location = New-Object System.Drawing.Point(0, 0)
-  $titleBar.BackColor = [System.Drawing.Color]::FromArgb(20, 20, 20)
+  $titleBar.BackColor = $titlebarColor
   $titleBar.Dock = "Top"
 
   # Create title label
@@ -78,7 +83,7 @@ function Show-MainWindow {
   $minimizeButton.BackColor = [System.Drawing.Color]::Transparent
   $minimizeButton.FlatStyle = "Flat"
   $minimizeButton.FlatAppearance.BorderSize = 0
-  $minimizeButton.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(60, 60, 60)
+  $minimizeButton.FlatAppearance.MouseOverBackColor = $hoverColor
   $minimizeButton.Size = New-Object System.Drawing.Size(45, 35)
   $minimizeButton.Location = New-Object System.Drawing.Point(($windowSettings.width - 90), 0)
   $minimizeButton.Anchor = "Top,Right"
@@ -96,7 +101,7 @@ function Show-MainWindow {
   # Add hover effects for close button
   $closeButton.Add_MouseEnter({
       $this.ForeColor = [System.Drawing.Color]::White
-      $this.BackColor = [System.Drawing.Color]::FromArgb(232, 17, 35)
+      $this.BackColor = $closeButtonColor
     })
   $closeButton.Add_MouseLeave({
       $this.ForeColor = [System.Drawing.Color]::FromArgb(200, 200, 200)
@@ -109,9 +114,7 @@ function Show-MainWindow {
     })
   $minimizeButton.Add_MouseLeave({
       $this.ForeColor = [System.Drawing.Color]::FromArgb(200, 200, 200)
-    })
-
-  # Variables for window dragging
+    })  # Variables for window dragging
   $script:isDragging = $false
   $script:lastCursor = [System.Drawing.Point]::Empty
 
