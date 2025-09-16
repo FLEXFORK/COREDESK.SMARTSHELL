@@ -28,16 +28,5 @@
     "base": "#303446",
     "mantle": "#292c3c",
     "crust": "#232634"
-  },
-  "application": {
-    "background": "#303446",
-    "foreground": "#c6d0f5",
-    "accent": "#ca9ee6",
-    "titlebar": "#292c3c",
-    "surface": "#414559",
-    "border": "#51576d",
-    "hover": "#51576d",
-    "closeButton": "#e78284",
-    "minimizeButton": "#e5c890"
   }
 }

@@ -153,19 +153,37 @@ function Get-Theme {
 
 function Get-DefaultTheme {
   return @{
-    name        = "Default Dark"
-    type        = "dark"
-    application = @{
-      background     = "#1e1e2e"
-      foreground     = "#cdd6f4"
-      accent         = "#cba6f7"
-      titlebar       = "#181825"
-      surface        = "#313244"
-      border         = "#45475a"
-      hover          = "#45475a"
-      closeButton    = "#f38ba8"
-      minimizeButton = "#f9e2af"
+    name   = "Default Dark"
+    type   = "dark"
+    colors = @{
+      base     = "#1e1e2e"
+      text     = "#cdd6f4"
+      mauve    = "#cba6f7"
+      mantle   = "#181825"
+      surface0 = "#313244"
+      surface1 = "#45475a"
+      red      = "#f38ba8"
+      yellow   = "#f9e2af"
     }
+  }
+}
+
+function Get-ThemeColors {
+  param(
+    [object]$Theme
+  )
+
+  # Map theme colors to UI elements using appropriate Catppuccin colors
+  return @{
+    background     = $Theme.colors.base      # Main background
+    foreground     = $Theme.colors.text      # Main text color
+    accent         = $Theme.colors.mauve     # Accent color for highlights
+    titlebar       = $Theme.colors.mantle    # Titlebar background
+    surface        = $Theme.colors.surface0  # Surface elements
+    border         = $Theme.colors.surface1  # Borders and outlines
+    hover          = $Theme.colors.surface1  # Hover states
+    closeButton    = $Theme.colors.red       # Close button danger color
+    minimizeButton = $Theme.colors.yellow    # Minimize button warning color
   }
 }
 

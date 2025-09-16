@@ -28,13 +28,17 @@ function Show-MainWindow {
   # Load current theme
   $theme = Get-Theme
 
+  # Get mapped theme colors for UI elements
+  $themeColors = Get-ThemeColors -Theme $theme
+
   # Parse colors from theme
-  $backgroundColor = ConvertFrom-HexString $theme.application.background
-  $foregroundColor = ConvertFrom-HexString $theme.application.foreground
-  $titlebarColor = ConvertFrom-HexString $theme.application.titlebar
-  $hoverColor = ConvertFrom-HexString $theme.application.hover
-  $closeButtonColor = ConvertFrom-HexString $theme.application.closeButton
-  $minimizeButtonColor = ConvertFrom-HexString $theme.application.minimizeButton  # Create main form (frameless)
+  $backgroundColor = ConvertFrom-HexString $themeColors.background
+  $foregroundColor = ConvertFrom-HexString $themeColors.foreground
+  $titlebarColor = ConvertFrom-HexString $themeColors.titlebar
+  $closeButtonColor = ConvertFrom-HexString $themeColors.closeButton
+  $minimizeButtonColor = ConvertFrom-HexString $themeColors.minimizeButton
+
+  # Create main form (frameless)
   $mainForm = New-Object System.Windows.Forms.Form
   $mainForm.Text = if ($RandomMode) { "$($settings.application.name) - Random Mode" } else { $settings.application.name }
   $mainForm.Size = New-Object System.Drawing.Size($windowSettings.width, $windowSettings.height)
@@ -69,7 +73,7 @@ function Show-MainWindow {
   $closeButton.BackColor = [System.Drawing.Color]::Transparent
   $closeButton.FlatStyle = "Flat"
   $closeButton.FlatAppearance.BorderSize = 0
-  $closeButton.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(232, 17, 35)
+  $closeButton.FlatAppearance.MouseOverBackColor = $closeButtonColor
   $closeButton.Size = New-Object System.Drawing.Size(45, 35)
   $closeButton.Location = New-Object System.Drawing.Point(($windowSettings.width - 45), 0)
   $closeButton.Anchor = "Top,Right"
@@ -83,7 +87,7 @@ function Show-MainWindow {
   $minimizeButton.BackColor = [System.Drawing.Color]::Transparent
   $minimizeButton.FlatStyle = "Flat"
   $minimizeButton.FlatAppearance.BorderSize = 0
-  $minimizeButton.FlatAppearance.MouseOverBackColor = $hoverColor
+  $minimizeButton.FlatAppearance.MouseOverBackColor = $minimizeButtonColor
   $minimizeButton.Size = New-Object System.Drawing.Size(45, 35)
   $minimizeButton.Location = New-Object System.Drawing.Point(($windowSettings.width - 90), 0)
   $minimizeButton.Anchor = "Top,Right"
